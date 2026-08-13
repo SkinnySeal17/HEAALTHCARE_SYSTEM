@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a1a1a">System Context Diagram — Healthcare Integration Test Harness</text>
+
+  <!-- MedTalk Connect -->
+  <rect x="30" y="80" width="180" height="70" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" filter="url(#shadow)"/>
+  <text x="120" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d47a1">MedTalk Connect</text>
+  <text x="120" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">(FAZ Australia)</text>
+  <text x="120" y="142" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#555">White-label FHIR Platform</text>
+
+  <!-- Test Harness (Green) -->
+  <rect x="340" y="70" width="220" height="90" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3" filter="url(#shadow)"/>
+  <text x="450" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b5e20">Healthcare Integration</text>
+  <text x="450" y="123" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b5e20">Test Harness</text>
+  <text x="450" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#2e7d32">YOUR BUILD (Stage 1 / Stage 2)</text>
+
+  <!-- Mock Best Practice -->
+  <rect x="340" y="220" width="180" height="70" rx="6" fill="#fff3e0" stroke="#ef6c00" stroke-width="2" filter="url(#shadow)"/>
+  <text x="430" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100">Mock Best Practice</text>
+  <text x="430" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">(Halo Connect FHIR)</text>
+  <text x="430" y="282" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#555">Primary Care EMR</text>
+
+  <!-- Mock Oracle Health -->
+  <rect x="560" y="220" width="180" height="70" rx="6" fill="#fff3e0" stroke="#ef6c00" stroke-width="2" filter="url(#shadow)"/>
+  <text x="650" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100">Mock Oracle Health</text>
+  <text x="650" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">(Millennium HL7 v2)</text>
+  <text x="650" y="282" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#555">Hospital EMR</text>
+
+  <!-- Synthetic Dataset -->
+  <rect x="340" y="340" width="180" height="70" rx="6" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2" filter="url(#shadow)"/>
+  <text x="430" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#4a148c">SNOMED CT-AU</text>
+  <text x="430" y="388" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#4a148c">Synthetic Dataset</text>
+  <text x="430" y="402" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#555">Patient records + mappings</text>
+
+  <!-- Test Runner -->
+  <rect x="660" y="80" width="180" height="70" rx="6" fill="#fce4ec" stroke="#c62828" stroke-width="2" filter="url(#shadow)"/>
+  <text x="750" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#880e4f">Test Runner &amp;</text>
+  <text x="750" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#880e4f">Report Generator</text>
+  <text x="750" y="142" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#555">Automated suite + reports</text>
+
+  <!-- Arrows -->
+  <!-- MedTalk -> Test Harness -->
+  <line x1="210" y1="105" x2="330" y2="105" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="270" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#444">FHIR R4 + HL7 v2</text>
+
+  <!-- Test Harness -> Mock Best Practice -->
+  <line x1="430" y1="160" x2="430" y2="210" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="460" y="188" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#444">Simulated FHIR API</text>
+
+  <!-- Test Harness -> Mock Oracle -->
+  <line x1="520" y1="140" x2="610" y2="210" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="590" y="175" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#444">Simulated HL7 ACK/NAK</text>
+
+  <!-- Synthetic Dataset -> Test Harness -->
+  <line x1="430" y1="340" x2="430" y2="170" stroke="#6a1b9a" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="360" y="260" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#6a1b9a">Seed data</text>
+
+  <!-- Test Runner -> Test Harness -->
+  <line x1="660" y1="115" x2="560" y2="115" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="610" y="108" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#444">Execute tests</text>
+
+  <!-- Test Harness -> Test Runner (results) -->
+  <line x1="560" y1="130" x2="660" y2="130" stroke="#c62828" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="610" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#c62828">Results / logs</text>
+
+  <!-- Legend -->
+  <rect x="30" y="440" width="840" height="60" rx="4" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="50" y="465" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Legend:</text>
+  <rect x="130" y="455" width="14" height="14" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="150" y="467" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">Your Build (Test Harness)</text>
+  <rect x="320" y="455" width="14" height="14" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="340" y="467" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">System Under Test (MedTalk Connect)</text>
+  <rect x="560" y="455" width="14" height="14" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+  <text x="580" y="467" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">Mock External Systems</text>
+  <rect x="730" y="455" width="14" height="14" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.5"/>
+  <text x="750" y="467" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">Synthetic Data</text>
+</svg>

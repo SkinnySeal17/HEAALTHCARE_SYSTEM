@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" width="900" height="640">
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <text x="450" y="30" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a1a1a">Architecture Overview — Test Harness Platform</text>
+
+  <!-- Layer 1: Presentation / API Layer -->
+  <rect x="80" y="60" width="600" height="90" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="120" y="85" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d47a1">1. Presentation / API Layer</text>
+  <rect x="100" y="95" width="150" height="40" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="175" y="112" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#0d47a1">Canonical FHIR R4 REST API</text>
+  <text x="175" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">/fhir/R4/* (AU Core)</text>
+  <rect x="270" y="95" width="150" height="40" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="345" y="112" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#0d47a1">HL7 v2.4 MLLP Gateway</text>
+  <text x="345" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">ADT / ORM / ORU</text>
+  <rect x="440" y="95" width="150" height="40" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="515" y="112" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#0d47a1">SMART on FHIR Simulator</text>
+  <text x="515" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">Token / Launch context</text>
+
+  <!-- Layer 2: Transformation Layer -->
+  <rect x="80" y="170" width="600" height="90" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="120" y="195" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b5e20">2. Transformation &amp; Conformance Layer</text>
+  <rect x="100" y="205" width="150" height="40" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="175" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#1b5e20">HL7-to-FHIR Mapping Engine</text>
+  <text x="175" y="236" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">Field-level + terminology</text>
+  <rect x="270" y="205" width="150" height="40" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="345" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#1b5e20">AU Core Validator</text>
+  <text x="345" y="236" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">StructureDefinition check</text>
+  <rect x="440" y="205" width="150" height="40" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="515" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#1b5e20">Error Injection Controller</text>
+  <text x="515" y="236" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">Latency / corrupt / drop</text>
+
+  <!-- Layer 3: Service Layer -->
+  <rect x="80" y="280" width="600" height="90" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="120" y="305" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#f57f17">3. Service Layer</text>
+  <rect x="100" y="315" width="110" height="40" rx="4" fill="#fff59d" stroke="#f9a825" stroke-width="1"/>
+  <text x="155" y="332" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#f57f17">Tenant Isolation</text>
+  <text x="155" y="346" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">Single tenant (S1)</text>
+  <rect x="230" y="315" width="110" height="40" rx="4" fill="#fff59d" stroke="#f9a825" stroke-width="1"/>
+  <text x="285" y="332" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#f57f17">Patient Context</text>
+  <text x="285" y="346" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">Encounter binding</text>
+  <rect x="360" y="315" width="110" height="40" rx="4" fill="#fff59d" stroke="#f9a825" stroke-width="1"/>
+  <text x="415" y="332" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#f57f17">Audit Logger</text>
+  <text x="415" y="346" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">Immutable events</text>
+  <rect x="490" y="315" width="110" height="40" rx="4" fill="#fff59d" stroke="#f9a825" stroke-width="1"/>
+  <text x="545" y="332" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#f57f17">Test Orchestrator</text>
+  <text x="545" y="346" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">Suite execution</text>
+
+  <!-- Layer 4: Data Layer -->
+  <rect x="80" y="390" width="600" height="90" rx="6" fill="#fce4ec" stroke="#c62828" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="120" y="415" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#880e4f">4. Data Layer</text>
+  <rect x="100" y="425" width="150" height="40" rx="4" fill="#f8bbd0" stroke="#c62828" stroke-width="1"/>
+  <text x="175" y="442" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#880e4f">PostgreSQL</text>
+  <text x="175" y="456" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">Synthetic patients, encounters</text>
+  <rect x="270" y="425" width="150" height="40" rx="4" fill="#f8bbd0" stroke="#c62828" stroke-width="1"/>
+  <text x="345" y="442" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#880e4f">File Store</text>
+  <text x="345" y="456" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">HL7 logs, test reports</text>
+  <rect x="440" y="425" width="150" height="40" rx="4" fill="#f8bbd0" stroke="#c62828" stroke-width="1"/>
+  <text x="515" y="442" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#880e4f">Mapping Tables</text>
+  <text x="515" y="456" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#333">SNOMED ↔ ICD-10-AM / MBS</text>
+
+  <!-- Layer 5: Connector Simulation Layer -->
+  <rect x="80" y="500" width="600" height="70" rx="6" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="120" y="525" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#4a148c">5. Connector Simulation Layer</text>
+  <rect x="260" y="535" width="180" height="30" rx="4" fill="#e1bee7" stroke="#6a1b9a" stroke-width="1"/>
+  <text x="350" y="554" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#4a148c">Halo Connect Simulator (Best Practice)</text>
+  <rect x="460" y="535" width="180" height="30" rx="4" fill="#e1bee7" stroke="#6a1b9a" stroke-width="1"/>
+  <text x="550" y="554" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#4a148c">Oracle Health Millennium Simulator</text>
+
+  <!-- Cross-cutting concerns box -->
+  <rect x="720" y="60" width="160" height="510" rx="6" fill="#fafafa" stroke="#78909c" stroke-width="2" stroke-dasharray="6,3" filter="url(#shadow2)"/>
+  <text x="800" y="85" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#455a64">Cross-Cutting Concerns</text>
+  <rect x="735" y="100" width="130" height="28" rx="4" fill="#eceff1" stroke="#78909c" stroke-width="1"/>
+  <text x="800" y="118" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#455a64">Security (TLS 1.2+)</text>
+  <rect x="735" y="140" width="130" height="28" rx="4" fill="#eceff1" stroke="#78909c" stroke-width="1"/>
+  <text x="800" y="158" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#455a64">Data Residency (AU)</text>
+  <rect x="735" y="180" width="130" height="28" rx="4" fill="#eceff1" stroke="#78909c" stroke-width="1"/>
+  <text x="800" y="198" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#455a64">Docker / Containerised</text>
+  <rect x="735" y="220" width="130" height="28" rx="4" fill="#eceff1" stroke="#78909c" stroke-width="1"/>
+  <text x="800" y="238" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#455a64">GitHub Actions CI/CD</text>
+  <rect x="735" y="260" width="130" height="28" rx="4" fill="#eceff1" stroke="#78909c" stroke-width="1"/>
+  <text x="800" y="278" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#455a64">OpenAPI / Swagger Docs</text>
+
+  <!-- Vertical flow arrows between layers -->
+  <line x1="380" y1="150" x2="380" y2="170" stroke="#333" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <line x1="380" y1="260" x2="380" y2="280" stroke="#333" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <line x1="380" y1="370" x2="380" y2="390" stroke="#333" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <line x1="380" y1="480" x2="380" y2="500" stroke="#333" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+  <!-- Bidirectional with cross-cutting -->
+  <line x1="680" y1="105" x2="720" y2="105" stroke="#78909c" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#arrow2)"/>
+  <line x1="720" y1="115" x2="680" y2="115" stroke="#78909c" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#arrow2)"/>
+</svg>
