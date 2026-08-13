@@ -13,5 +13,5 @@ A fully synthetic, safe test harness for validating MedTalk Connect's healthcare
 # Clone
 git clone https://github.com/your-team/your-repo.git
 
-# Setup (Stage 2)
+# Setup (Stage 2 - 2nd semester)
 docker-compose up
