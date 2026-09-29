@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 420" width="950" height="420">
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+    <filter id="shadow3" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <text x="475" y="30" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a1a1a">Data Flow — HL7 v2 ADT-A01 to Canonical FHIR R4</text>
+
+  <!-- Step 1 -->
+  <rect x="30" y="70" width="140" height="70" rx="6" fill="#fff3e0" stroke="#ef6c00" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="100" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#e65100">1. Mock Oracle Health</text>
+  <text x="100" y="113" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">Sends ADT^A01 via</text>
+  <text x="100" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">MLLP over TCP</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="170" y1="105" x2="210" y2="105" stroke="#333" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <text x="190" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#444">HL7 v2.4</text>
+
+  <!-- Step 2 -->
+  <rect x="210" y="70" width="140" height="70" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="280" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0d47a1">2. MLLP Gateway</text>
+  <text x="280" y="113" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">Receives message;</text>
+  <text x="280" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">returns AA ACK</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="350" y1="105" x2="390" y2="105" stroke="#333" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <text x="370" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#444">Parsed msg</text>
+
+  <!-- Step 3 -->
+  <rect x="390" y="70" width="140" height="70" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="460" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1b5e20">3. Mapping Engine</text>
+  <text x="460" y="113" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">PID→Patient, PV1→</text>
+  <text x="460" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">Encounter, terminology</text>
+
+  <!-- Arrow 3->4 -->
+  <line x1="530" y1="105" x2="570" y2="105" stroke="#333" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <text x="550" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#444">FHIR R4 JSON</text>
+
+  <!-- Step 4 -->
+  <rect x="570" y="70" width="140" height="70" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="640" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1b5e20">4. AU Core Validator</text>
+  <text x="640" y="113" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">StructureDefinition</text>
+  <text x="640" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">check; quarantine if fail</text>
+
+  <!-- Arrow 4->5 -->
+  <line x1="710" y1="105" x2="750" y2="105" stroke="#333" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <text x="730" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#444">Valid resource</text>
+
+  <!-- Step 5 -->
+  <rect x="750" y="70" width="140" height="70" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="820" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0d47a1">5. Canonical FHIR API</text>
+  <text x="820" y="113" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">Exposes Patient +</text>
+  <text x="820" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">Encounter via REST</text>
+
+  <!-- Step 6 (below) -->
+  <rect x="390" y="240" width="180" height="70" rx="6" fill="#fce4ec" stroke="#c62828" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="480" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#880e4f">6. Test Runner Asserts</text>
+  <text x="480" y="283" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">GET /Patient/{id} fields</text>
+  <text x="480" y="298" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">match synthetic seed data</text>
+
+  <!-- Arrow 5->6 -->
+  <line x1="820" y1="140" x2="820" y2="200" stroke="#c62828" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow3)"/>
+  <line x1="820" y1="200" x2="570" y2="200" stroke="#c62828" stroke-width="1.5"/>
+  <line x1="570" y1="200" x2="570" y2="240" stroke="#c62828" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <text x="700" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#c62828">HTTP GET /fhir/R4/Patient/SYNTH-001</text>
+
+  <!-- Data store -->
+  <rect x="30" y="240" width="140" height="70" rx="6" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="100" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#4a148c">Synthetic Dataset</text>
+  <text x="100" y="283" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">PostgreSQL seed data:</text>
+  <text x="100" y="298" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">MRN, name, DOB, gender</text>
+
+  <!-- Arrow data->assert -->
+  <line x1="170" y1="275" x2="380" y2="275" stroke="#6a1b9a" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow3)"/>
+  <text x="275" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#6a1b9a">Expected values</text>
+
+  <!-- Result -->
+  <rect x="660" y="240" width="180" height="70" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="750" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1b5e20">Test Report Output</text>
+  <text x="750" y="283" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">PASS: Patient.name =</text>
+  <text x="750" y="298" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">"Citizen, Jane" ✓</text>
+
+  <!-- Arrow assert->result -->
+  <line x1="570" y1="275" x2="650" y2="275" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <text x="610" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#2e7d32">Assertion result</text>
+
+  <!-- Detail box: HL7 segments -->
+  <rect x="30" y="340" width="400" height="60" rx="4" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="40" y="360" font-family="Consolas, monospace" font-size="9" fill="#333">MSH|^~\&amp;|MILLENNIUM|ACTHEALTH|MEDTALK|20260810101500||ADT^A01|MSG001|P|2.4</text>
+  <text x="40" y="375" font-family="Consolas, monospace" font-size="9" fill="#333">PID|1||MRN00123456^^^ACTHEALTH^MR||CITIZEN^JANE^^^^MS||19850614|F|||1 Example St^^CANBERRA^ACT^2601^AU</text>
+  <text x="40" y="390" font-family="Consolas, monospace" font-size="9" fill="#333">PV1|1|I|WARD3^301^A^ACTHEALTH||||1234567890^SMITH^JOHN^^^^DR|||||MED||||||||INP</text>
+
+  <!-- Detail box: FHIR output -->
+  <rect x="460" y="340" width="460" height="60" rx="4" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="470" y="360" font-family="Consolas, monospace" font-size="9" fill="#333">{ "resourceType": "Patient", "meta": { "profile": ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"] },</text>
+  <text x="470" y="375" font-family="Consolas, monospace" font-size="9" fill="#333">  "identifier": [{ "system": "http://acthealth.example/mrn", "value": "MRN00123456" }],</text>
+  <text x="470" y="390" font-family="Consolas, monospace" font-size="9" fill="#333">  "name": [{ "use": "official", "family": "Citizen", "given": ["Jane"] }], "gender": "female", "birthDate": "1985-06-14" }</text>
+
+  <!-- Labels -->
+  <text x="30" y="335" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#555">Sample HL7 v2.4 Input (Synthetic)</text>
+  <text x="460" y="335" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#555">Resulting AU Core FHIR R4 Patient (Synthetic)</text>
+</svg>
