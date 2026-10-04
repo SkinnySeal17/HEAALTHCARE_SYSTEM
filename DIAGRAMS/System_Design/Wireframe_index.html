@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MedTalk Test Harness — wireframes</title>
+  <link rel="stylesheet" href="assets/wireframe.css" />
+  <style>
+    body { background: #f6f8fb; }
+    .wrap { max-width: 880px; margin: 40px auto; padding: 0 24px 60px; }
+    a.row { display: block; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin-bottom: 8px; text-decoration: none; color: var(--ink); }
+    a.row small { display: block; color: var(--muted); margin-top: 3px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker">Draft design · not approved</div>
+    <h1>MedTalk Test Harness wireframes</h1>
+    <p class="sub">Open any screen locally. These are high-fidelity HTML mockups for the report, not a running application. Login structure is retained. Everything after entry was redesigned from the requirements.</p>
+    <h2>Entry</h2>
+    <a class="row" href="login-entry/welcome.html">Welcome gate<small>Locked entry screen</small></a>
+    <a class="row" href="login-entry/gateway.html">Identity and access gateway<small>Locked two-path entry. Permission text corrected.</small></a>
+    <a class="row" href="login-entry/launch-context.html">SMART launch context<small>Proposed destination for the clinician path. Not a clinical hub.</small></a>
+    <h2>Harness</h2>
+    <a class="row" href="runs/home.html">Test runs<small>Home. Replaces the statistics dashboard.</small></a>
+    <a class="row" href="runs/run-detail.html">Run detail<small>Configuration, exchange, validation, result.</small></a>
+    <a class="row" href="scenarios/list.html">Scenarios<small>Saved scenarios. Suites are not a separate area.</small></a>
+    <a class="row" href="scenarios/builder.html">Configure scenario<small>Connector, test type, fixture, expected result.</small></a>
+    <a class="row" href="data/datasets.html">Datasets<small>Baseline and edge-case cohorts.</small></a>
+    <a class="row" href="data/fixture.html">Fixture inspector<small>Replaces the patient table and clinical timeline.</small></a>
+    <a class="row" href="terminology/explorer.html">Terminology checks<small>Diagnosis map separated from billing rules.</small></a>
+    <a class="row" href="mocks/connectors.html">Mock connectors<small>Oracle, Best Practice/Halo, Epic.</small></a>
+    <a class="row" href="settings/settings.html">Session and audit<small>Tenant, token state, append-only audit.</small></a>
+  </div>
+</body>
+</html>
